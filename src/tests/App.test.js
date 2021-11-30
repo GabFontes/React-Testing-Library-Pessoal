@@ -41,7 +41,6 @@ describe('Teste o componente <App.js />', () => {
 
     const aboutTitle = screen.getByRole('heading', { name: /About Pokédex/i, level: 2 });
     expect(aboutTitle).toBeDefined();
-    console.log(history);
     const { location: { pathname: pathNameAbout } } = history;
     expect(pathNameAbout).toBe('/about');
   });
