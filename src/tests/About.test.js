@@ -28,8 +28,9 @@ describe('Teste o componente <About.js />', () => {
 
   it('Teste se a página contém uma imagem de pokedex', () => {
     renderWithRouter(<About />);
+
     // https://stackoverflow.com/questions/60509527/jestreact-native-testing-library-how-to-test-an-image-src
     const img = screen.getByRole('img', { name: /pokédex/i });
-    expect(img.src).toContain('https://cdn2.bulbagarden.net/upload/thumb/8/86/Gen_I_Pok%C3%A9dex.png/800px-Gen_I_Pok%C3%A9dex.png');
+    expect(img).toHaveAttribute('src', 'https://cdn2.bulbagarden.net/upload/thumb/8/86/Gen_I_Pok%C3%A9dex.png/800px-Gen_I_Pok%C3%A9dex.png');
   });
 });
