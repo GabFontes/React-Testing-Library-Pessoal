@@ -71,7 +71,6 @@ describe('', () => {
     expect(viridianLocation).toBeDefined();
     const powerPlanLocation = screen.getByText('Kanto Power Plant');
     expect(powerPlanLocation).toBeDefined();
-
   });
 
   it(`Teste se o usuário pode favoritar um pokémon
