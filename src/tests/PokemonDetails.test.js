@@ -67,8 +67,11 @@ describe('', () => {
     expect(locationImg).toHaveLength(2);
     expect(locationImg[0]).toHaveAttribute('src', src);
 
-    const locationName = screen.getByText('Kanto Viridian Forest');
-    expect(locationName).toBeDefined();
+    const viridianLocation = screen.getByText('Kanto Viridian Forest');
+    expect(viridianLocation).toBeDefined();
+    const powerPlanLocation = screen.getByText('Kanto Power Plant');
+    expect(powerPlanLocation).toBeDefined();
+
   });
 
   it(`Teste se o usuário pode favoritar um pokémon
