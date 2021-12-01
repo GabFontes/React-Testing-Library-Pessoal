@@ -19,6 +19,9 @@ describe('Teste o componente <Pokedex.js />', () => {
 
   it('Teste se é mostrado apenas um Pokémon por vez', () => {
     renderWithRouter(<App />);
+
+    const allPoke = screen.getAllByTestId('pokemon-name');
+    expect(allPoke).toHaveLength(1);
   });
 
   it(`Teste se é exibido o próximo Pokémon da lista
@@ -41,6 +44,9 @@ describe('Teste o componente <Pokedex.js />', () => {
 
     const filterButtons = screen.getAllByTestId('pokemon-type-button');
     expect(filterButtons).toHaveLength(VALUE);
+    const buttonsName = filterButtons.map((button) => button.textContent);
+    const buttonsSet = [...new Set(buttonsName)];
+    expect(buttonsSet).toEqual(buttonsName);
 
     const fireButton = screen.getByRole('button', { name: /fire/i });
     userEvent.click(fireButton);
