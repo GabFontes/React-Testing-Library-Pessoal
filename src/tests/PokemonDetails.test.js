@@ -25,7 +25,6 @@ describe('Teste o componente <PokemonDetails.js />', () => {
     const pokeInfo = screen.getByRole('link', { name: /More details/i });
     expect(pokeInfo).toBeDefined();
     userEvent.click(pokeInfo);
-
     expect(pokeInfo).not.toBeInTheDocument();
   });
 });
